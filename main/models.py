@@ -50,6 +50,7 @@ class Recipe(models.Model):
     prep_guide = models.TextField()
     tags = models.ManyToManyField(Tag)
     users_favorited = models.ManyToManyField(CustomUser, related_name='favorited_recipes')
+    owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default=CustomUser.objects.get(username="uziv").username)
 
     def __str__(self):
         return "Recipe for {}".format(self.name)

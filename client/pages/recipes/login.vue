@@ -50,6 +50,7 @@ export default {
                 if (response.data.token) {
                     const token = response.data.token;
                     localStorage.setItem('userToken', token);
+                    localStorage.setItem('username', this.username);
                     this.isLoggedIn = true;
                     this.$router.push('/recipes/');     // přesune na stránku s recepty
                 }   else {

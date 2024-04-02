@@ -11,7 +11,6 @@
                 <li> <NuxtLink to="/recipes"> recepty </NuxtLink> </li>
                 <li v-if="!isLoggedIn"> <NuxtLink to="/recipes/login"> přihlášení </NuxtLink> </li> 
                 <li v-if="!isLoggedIn"> <NuxtLink to="/recipes/register"> registrace </NuxtLink> </li>
-                <li v-if="isLoggedIn"> <NuxtLink to="/recipes/user"> uživatel </NuxtLink> </li> 
                 <li v-if="isLoggedIn" @click="logout"> <a href=""> odhlásit se </a> </li>
             </ul>
         </nav>

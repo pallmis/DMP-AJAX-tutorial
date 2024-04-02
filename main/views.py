@@ -3,7 +3,8 @@ from .serializers import RecipeSerializer
 from .models import Recipe
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-from rest_framework.decorators import action, api_view
+from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import authenticate, login as djlogin, get_user_model
 from django.core.exceptions import ValidationError;
 from django.db import IntegrityError
