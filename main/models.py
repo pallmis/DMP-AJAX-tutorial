@@ -26,9 +26,6 @@ class CustomUserManager(BaseUserManager):
 class CustomUser(AbstractBaseUser):
     username = models.CharField(max_length=150, unique=True, primary_key=True)
     password = models.CharField(max_length=128)
-    
-    # is_active = models.BooleanField(default=True)
-    # is_staff = models.BooleanField(default=False)
 
     objects = CustomUserManager()
 

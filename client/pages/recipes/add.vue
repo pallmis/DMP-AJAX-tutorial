@@ -38,9 +38,9 @@
                 <div class="form-group">
                   <label for class="down">obtížnost</label>
                   <select v-model="recipe.difficulty" class="form-control">
-                    <option value="Easy">jednudochá</option>
-                    <option value="Medium">střední</option>
-                    <option value="Hard">těžká</option>
+                    <option value="Jednoduchá">jednudochá</option>
+                    <option value="Střední">střední</option>
+                    <option value="Težká">těžká</option>
                   </select>
                 </div>
               </div>

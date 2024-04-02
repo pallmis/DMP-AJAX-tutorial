@@ -1,8 +1,5 @@
 <template>
-    <div v-if="isLoggedIn">
-        <h1> Pouze pro nepřihlášené uživatele </h1>
-    </div>
-    <div v-else>
+    <div>
         <h1> Registrace </h1>
         <form @submit.prevent="submitForm" class="my_form">
             <div class="form-group change">
@@ -19,6 +16,9 @@
             </div> 
             <button type="submit" class="my_button"> registrovat se </button>
         </form>
+        <div>
+            <p class="register_message"> {{ registerMessage }} </p>
+        </div>
     </div>
 </template>
 
@@ -35,7 +35,8 @@ export default {
         return {
             username: '',
             password: '',
-            password2: '',  
+            password2: '',
+            registerMessage: '',
         };
     },
     methods: {
@@ -46,9 +47,15 @@ export default {
                     password: this.password,
                     password2: this.password2,
                 });
+
             console.log(response.data);
           } catch (error) {
                 console.error(error);
+                if (error.response && error.response.data) {
+                    this.registerMessage = error.response.data.message;
+                } else {
+                    console.error('Nastal error při registraci:', error);
+                }
             }
         },
     }, 
@@ -56,5 +63,9 @@ export default {
 </script>
 
 <style>
+
+.register_message {
+    margin-top: 10px;
+}
 
 </style>

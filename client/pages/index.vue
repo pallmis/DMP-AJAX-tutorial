@@ -19,8 +19,8 @@
                 <a class="link_t_h2" href="#" @click="scrollToSection('pages-id')"> Stránky </a> <br>
                 <a class="link_t_h3" href="#" @click="scrollToSection('pages-layout-id')"> Layout </a>  <br>
                     <a class="link_t_h3" href="#" @click="scrollToSection('pages-recipes-id')"> Recepty </a>  <br>
-                    <a class="link_t_h3" href="#" @click="scrollToSection('pages-login-id')"> Přihlášení </a>  <br>
-                    <a class="link_t_h3" href="#" @click="scrollToSection('pages-register-id')"> Registrace </a> 
+                    <a class="link_t_h3" href="#" @click="scrollToSection('pages-register-id')"> Registrace </a> <br>
+                    <a class="link_t_h3" href="#" @click="scrollToSection('pages-login-id')"> Přihlášení </a>   
             </div>
             <div class="content">
                 <h1 class="text_color"> AJAX tutoriál </h1>
@@ -44,7 +44,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> konzole </p>
-                            <img src="" alt=""> <!-- přidat obrázek -->    
+                            <img src="~/assets/img/django_install.png" class="tutorial_img">    
                         </div>
                     <h3 class="text_color title_text" id="django-project-id"> Vytvoření Django projektu </h3>  <!-- vytvoření projektu -->
                         <p class="text_color normal_text">  
@@ -62,7 +62,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> nová aplikace </p>
-                            <img src="~/assets/img/novy_projekt2.png">
+                            <img src="~/assets/img/novy_projekt2.png" class="tutorial_img">
                         </div>
                     <h3 class="text_color title_text" id="django-library-id"> Stažení knihoven </h3>  <!-- používané knihovny -->
                         <p class="text_color normal_text">   <!-- zde dopsat knihovny pokud přibudou --> 
@@ -74,7 +74,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> konzole </p>
-                            <img src="" alt=""> <!-- přidat obrázek -->    
+                            <img src="~/assets/img/stazeni_knihoven.png" class="tutorial_img">  
                         </div>
                     <h3 class="text_color title_text" id="django-settings-id"> Nastavení djanga </h3>  <!-- nastavení -->
                     <h4 class="text_color title_text"> Nastavení projektu </h4>
@@ -86,21 +86,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> .../vasprojekt/settings.py </p>
-                            <div>
-                                INSTALLED_APPS = [ <br>
-                                    'django.contrib.admin',<br>
-                                    'django.contrib.auth',<br>
-                                    'django.contrib.contenttypes',<br>
-                                    'django.contrib.messages',<br>
-                                    'django.contrib.staticfiles',<br>
-                                    'django.contrib.sites',<br>
-                                    'django.contrib.sessions',<br>
-                                    'vaseaplikace',<br>
-                                    'rest_framework', <br>
-                                    'rest_framework.authtoken',<br>
-                                    'corsheaders', <br>
-                                ]
-                            </div>    
+                            <img src="~/assets/img/installed_apps.png" class="tutorial_img">
                         </div>
                         <p class="text_color normal_text">      <!-- MIDDLEWARE -->
                             Dále přidáme corsheaders middleware do našich použývaných middleware tak že do seznamu 
@@ -110,7 +96,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> .../vasprojekt/settings.py </p>
-                            <img src="" alt=""> <!-- přidat obrázek -->    
+                            <img src="~/assets/img/middleware.png" class="tutorial_img">   
                         </div>
                         <p class="text_color normal_text">
                             Jako další si do seznamu CORS_ALLOWED_ORIGINS, což jsou povolené URL adresy, přidáme adresu našeho
@@ -119,16 +105,26 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> .../vasprojekt/settings.py </p>
-                            <img src="" alt=""> <!-- přidat obrázek -->    
+                            <img src="~/assets/img/settings_3.png" class="tutorial_img">     
                         </div>
                         <p class="text_color normal_text">
                             Dále sei nastavíme potřebné routy v urls.py našeho projektu podle obrázku:
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> .../vasprojekt/urls.py </p>
-                            <img src="" alt=""> <!-- přidat obrázek -->    
+                            <img src="~/assets/img/urls.png" class="tutorial_img">     
                         </div>
                     <h4 class="text_color title_text"> Nastavení aplikace </h4>
+                    <h5 class="text_color title_text"> Vytvoření rout </h5>
+                        <p class="text_color normal_text">
+                            V tomto kroku je vytvoření potřebných rout backendu. Tyto routy definují URL adresy,
+                            na které bude frontend posílat requesty a tyto adresy spojují s funkcemi, které tyto
+                            requesty vyhodnocují.
+                        </p>
+                        <div class="tutorial_img_box">
+                            <p class="text_color tutorial_box_title"> .../vaseaplikace/urls.py </p>
+                            <img src="" class="tutorial_img">    
+                        </div>
                     <h5 class="text_color title_text"> Vytvoření databáze </h5>
                         <p class="text_color normal_text">
                             V djangu se databáze vytváří a edituje pomocí souboru models.py. V tomto souboru si zadefinujeme
@@ -141,7 +137,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> .../vaseaplikace/models.py </p>
-                            <img src="" alt=""> <!-- přidat obrázek -->    
+                            <img src="~/assets/img/models.png" class="tutorial_img">    
                         </div>
 
 
@@ -162,7 +158,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> konzole </p>
-                            <img src="" alt=""> <!-- přidat obrázek -->    
+                            <img src="" class="tutorial_img"> <!-- přidat obrázek -->    
                         </div>
                     <h3 class="text_color title_text" id="nuxt-layout-id"> Rozložení Nuxtu </h3>
                         <p class="text_color normal_text">
@@ -170,7 +166,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> struktura </p>
-                            <img src="" alt=""> <!-- přidat obrázek -->    
+                            <img src="~/assets/img/client_rozloz.png" class="tutorial_img">    
                         </div>
                         <p class="text_color normal_text">
                             Pokud vám některé složky nebo soubory chybí, tak si je vytvořte. A teď k jejich použití. <br>
@@ -193,15 +189,34 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> .../nuxt.config.js </p>
-                            <img src="" alt=""> <!-- přidat obrázek --> 
+                            <img src="~/assets/img/nuxt_config.png" class="tutorial_img"> 
+                        </div>
+                        <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> .../assets/css/prechody.css </p>
-                            <img src="" alt=""> <!-- přidat obrázek -->    
+                            <img src="~/assets/img/prechody.png" class="tutorial_img">   
+                        </div>
+                        <p class="text_color normal_text">
+                            Dále si vytvořte ve složce store soubor "index.js", ve kterém bede logika
+                            pro posílání requestu na recepty backendu a jejich uložení ve storu. Zároveň
+                            zde bude logika pro zjišťování, zda je uživatel přihlášen a metoda pro jeho odhlášení
+                        </p>
+                        <div class="tutorial_img_box">
+                            <p class="text_color tutorial_box_title"> .../store/index.js </p>
+                            <img src="" class="tutorial_img">   <!-- přidat obrázek -->
+                        </div>
+                        <p class="text_color normal_text">
+                            Také si vytvořte složku plugins, a v ní soubor "axios.js". Zde bude logika
+                            pro modul axios
+                        </p>
+                        <div class="tutorial_img_box">
+                            <p class="text_color tutorial_box_title"> .../store/index.js </p>
+                            <img src="" class="tutorial_img">   <!-- přidat obrázek -->
                         </div>
 
 
                 <h2 class="text_color title_text" id="pages-id"> Vytvoření stránek </h2>
                     <p class="text_color normal_text">
-                        Nyní, když máme vše připraveno si vytvoříme jednotlvé stránky
+                        Nyní, když máme vše připraveno, si vytvoříme jednotlvé stránky.
                     </p>
                     <h3 class="text_color title_text" id="pages-layout-id"> Vytvoření layoutu </h3>
                         <p class="text_color normal_text">
@@ -211,22 +226,78 @@
                             Layout vytvořte ve složce layouts pod názvem default.vue a použíte pro něj následující kód: 
                         </p>
                         <div class="tutorial_img_box">
-                            <p class="text_color"> .../layouts/default.vue </p>
-                            <img src="" alt="">     <!-- přidat obrázek --> 
+                            <p class="text_color"> .../client/layouts/default.vue </p>
+                            <img src="~/assets/img/layout.png" class="tutorial_img">     <!-- přidat obrázek --> 
                         </div>
+                        <p class="text_color normal_text">
+                            V tomto layoutu je již i zahrnutá logika, pro správné zobrazování rozhraní pro 
+                            přihlášené a nepřihlášené uživatele.
+                        </p>
                     <h3 class="text_color title_text" id="pages-recipe-id"> Vytvoření stránky s recepty </h3>
                         <p class="text_color normal_text">
-                            
+                            S hotovým layoutem si vytvořte ve složce pages soubor "index.vue", který bude stránka
+                            zobrazující všechny recepty ve formě vytvořené ve "components/RecipeCard.vue". Kód stránky 
+                            je v obrázku níže.
                         </p>
-                    <h3 class="text_color title_text" id="pages-login-id"> Vytvoření stránky pro přihášení </h3>
+                        <div class="tutorial_img_box">
+                            <p class="text_color"> .../client/pages/index.vue </p>
+                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                        </div>
                         <p class="text_color normal_text">
-
+                            Po stránce s recepty, si udělejte ve složce pages složku "_id". Pozor "_" je v názvu
+                            nutné pro správnou funkci! V této složce vytvořte soubor "index.vue", který bude stránkou
+                            pro zobrazení jendnoho receptu.
                         </p>
+                        <div class="tutorial_img_box">
+                            <p class="text_color"> .../client/pages/_id/index.vue </p>
+                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                        </div>
+                        <p class="text_color normal_text">
+                            Jako poslední z frontendu si vytvořte ve složce pages soubor "add.vue". Tento soubor
+                            bude stránkou pro přidání nového receptu.
+                        </p>
+                        <div class="tutorial_img_box">
+                            <p class="text_color"> .../client/pages/add.vue </p>
+                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                        </div>
+                        <p class="text_color normal_text">
+                            Nyní s připraveným frontendem je potřeba vytvořit potřebnou logiku na našem backendu.
+                            Jelikož již máme vytvořené všechny potřebné routy, tak je potřeba už nastavit jen 
+                            samotnou funkci v souboru views.py.
+                        </p>
+                        <div class="tutorial_img_box">
+                            <p class="text_color"> .../vaseaplikace/views.vue </p>
+                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                        </div>
+                        <p class="text_color normal_text">
+                            U receptů si vytvoříme ještě serializér v souboru serializers.py
+                        </p>
+                        <div class="tutorial_img_box">
+                            <p class="text_color"> .../vaseaplikace/serializers.vue </p>
+                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                        </div>
                     <h3 class="text_color title_text" id="pages-register-id"> Vytvoření stránky pro registraci </h3>
                         <p class="text_color normal_text">
-
+                            Nyní na vytvoření stránky pro registraci. Ve frontendu je potřeba vytvořit stránku ve 
+                            složce pages, nazveme ji "register.vue".
+                        </p>    
+                        <div class="tutorial_img_box">
+                            <p class="text_color"> .../client/pages/register.vue </p>
+                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                        </div>
+                        <p class="text_color normal_text">
+                            Jako další si k této stánce vytvořte v backendu funkci pro vyhodnocení registrace, 
+                            ve složce views.py.
                         </p>
-
+                        <div class="tutorial_img_box">
+                            <p class="text_color"> .../vaseaplikace/views.py </p>
+                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                        </div>
+                    <h3 class="text_color title_text" id="pages-login-id"> Vytvoření stránky pro přihášení </h3>
+                        <p class="text_color normal_text">
+                            Nyní si ve frontendu ve složce pages vytvořte soubor stránky pro přihlášení. Nazveme ho 
+                        </p>
+                    
             </div>
             <div class="other">
                 <!-- menu ostatních věcí -->
@@ -506,17 +577,6 @@ input:checked + .slider:before {
     display: block;
     margin: 0 auto; 
     max-width: 100%; /* Ensure image does not overflow the container */
-}
-
-.code_piece {
-    max-width: 40%; 
-    max-height: 300px; 
-    overflow-x: auto; 
-    overflow-y: auto; 
-    padding: 10px;
-    margin: 0 auto; 
-    white-space: pre-wrap; /* Preserve line breaks */
-    background-color: #f5f5f5; /* Background color for code piece */ 
 }
 
 </style>

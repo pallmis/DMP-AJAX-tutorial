@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import RecipeViewSet, login, register
+from .views import RecipeViewSet, login, register, toggle_favorite
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
@@ -10,4 +10,5 @@ urlpatterns = [
     path("recipes/<int:pk>/", RecipeViewSet.as_view({"get": "retrieve"}), name="recipe-detail"),
     path("user/login/", login, name="login"),
     path("user/register/", register, name="register"),
+    path("recipes/<int:pk>/favorite/", toggle_favorite, name="toggle_favorite"),
 ]

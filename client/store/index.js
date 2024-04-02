@@ -1,14 +1,10 @@
 export const state = () => ({
     recipes: [],
-    username: "",
   });
   
 export const mutations = {
     allRecipes(state, recipes) {
         state.recipes = recipes;
-    },
-    saveUsername(state, username) {
-        state.username = username;
     },
 };
 

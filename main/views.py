@@ -4,7 +4,8 @@ from .serializers import RecipeSerializer
 from .models import Recipe
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-from rest_framework.decorators import action, api_view
+from rest_framework.decorators import action, api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth import authenticate, login as djlogin, get_user_model
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError;
@@ -61,3 +62,30 @@ def register(request):
     except ValidationError as e:
         return Response({'message': e.messages}, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['POST', 'DELETE'])
+@permission_classes([IsAuthenticated])  # Only authenticated users can toggle favorites
+def toggle_favorite(request, pk):
+    try:
+        recipe = Recipe.objects.get(pk=pk)
+    except Recipe.DoesNotExist:
+        return Response({'message': 'Recipe not found'}, status=status.HTTP_404_NOT_FOUND)
+
+    user = request.user
+
+    if request.method == 'POST':
+        if user not in recipe.favorited_by.all():
+            recipe.favorited_by.add(user)
+            recipe.save()
+            return Response({'message': 'Recipe added to favorites'})
+        else:
+            return Response({'message': 'Recipe already favorited'}, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        if user in recipe.favorited_by.all():
+            recipe.favorited_by.remove(user)
+            recipe.save()
+            return Response({'message': 'Recipe removed from favorites'})
+        else:
+            return Response({'message': 'Recipe not favorited by user'}, status=status.HTTP_400_BAD_REQUEST)
+
+    return Response({'message': 'Invalid request method'}, status=status.HTTP_400_BAD_REQUEST)

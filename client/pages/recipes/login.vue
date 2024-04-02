@@ -46,18 +46,18 @@ export default {
                     password: this.password,
                 });
 
-                const token = response.data.token;  // definuju token jako token
-                localStorage.setItem('userToken', token);   // uložím token do localstorage
-                this.isLoggedIn = true;
-
-                this.loginMessage = response.data.message; 
-
                 if (response.data.token) {
-                    this.$store.commit('saveUsername', username); // uložení jména uživatele do storu
+                    const token = response.data.token;
+                    localStorage.setItem('userToken', token);
+                    this.isLoggedIn = true;
                     this.$router.push('/recipes/');     // přesune na stránku s recepty
+                }   else {
+                    this.loginMessage = response.data.message;  // Update message with error
+                    this.isLoggedIn = false;
                 }
           } catch (error) {
                 console.error(error);
+                this.loginMessage = 'Nastal error při přihlašování.';
             }
         },
     },
