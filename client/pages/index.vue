@@ -258,7 +258,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color"> .../client/pages/add.vue </p>
-                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                            <img src="~/assets/img/add_page.png" class="tutorial_img">     <!-- přidat obrázek --> 
                         </div>
                         <p class="text_color normal_text">
                             Nyní s připraveným frontendem je potřeba vytvořit potřebnou logiku na našem backendu.
