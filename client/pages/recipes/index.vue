@@ -40,8 +40,7 @@
       async deleteRecipe(recipe_id) {
         try {
           await this.$axios.$delete(`/recipes/${recipe_id}/`);
-          // let newRecipes = await this.$axios.$get("/recipes/"); 
-          // this.recipes = newRecipes; 
+          this.$store.dispatch('fetchRecipes');
         } catch (e) {
           console.log(e);
         }

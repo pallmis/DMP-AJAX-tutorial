@@ -112,7 +112,10 @@
           console.log(e);
         }
       }
-    }
+    },
+    destroyed() {
+      this.$store.dispatch('fetchRecipes');
+    },
   };
   </script>
   
