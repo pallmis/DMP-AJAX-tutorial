@@ -123,7 +123,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> .../vaseaplikace/urls.py </p>
-                            <img src="" class="tutorial_img">    
+                            <img src="~/assets/img/app_urls.png" class="tutorial_img">    
                         </div>
                     <h5 class="text_color title_text"> Vytvoření databáze </h5>
                         <p class="text_color normal_text">
@@ -158,7 +158,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> konzole </p>
-                            <img src="" class="tutorial_img"> <!-- přidat obrázek -->    
+                            <img src="~/assets/img/nuxt_novyclient.png" class="tutorial_img">  
                         </div>
                     <h3 class="text_color title_text" id="nuxt-layout-id"> Rozložení Nuxtu </h3>
                         <p class="text_color normal_text">
@@ -202,15 +202,15 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color tutorial_box_title"> .../store/index.js </p>
-                            <img src="" class="tutorial_img">   <!-- přidat obrázek -->
+                            <img src="~/assets/img/store.png" class="tutorial_img">   
                         </div>
                         <p class="text_color normal_text">
                             Také si vytvořte složku plugins, a v ní soubor "axios.js". Zde bude logika
                             pro modul axios
                         </p>
                         <div class="tutorial_img_box">
-                            <p class="text_color tutorial_box_title"> .../store/index.js </p>
-                            <img src="" class="tutorial_img">   <!-- přidat obrázek -->
+                            <p class="text_color tutorial_box_title"> .../plugins/index.js </p>
+                            <img src="~/assets/img/axios.png" class="tutorial_img">   
                         </div>
 
 
@@ -227,7 +227,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color"> .../client/layouts/default.vue </p>
-                            <img src="~/assets/img/layout.png" class="tutorial_img">     <!-- přidat obrázek --> 
+                            <img src="~/assets/img/layout.png" class="tutorial_img">     
                         </div>
                         <p class="text_color normal_text">
                             V tomto layoutu je již i zahrnutá logika, pro správné zobrazování rozhraní pro 
@@ -241,7 +241,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color"> .../client/pages/index.vue </p>
-                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                            <img src="~/assets/img/recipe_index.png" class="tutorial_img">      
                         </div>
                         <p class="text_color normal_text">
                             Po stránce s recepty, si udělejte ve složce pages složku "_id". Pozor "_" je v názvu
@@ -250,7 +250,7 @@
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color"> .../client/pages/_id/index.vue </p>
-                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                            <img src="~/assets/img/recipe_id_index.png" class="tutorial_img">   
                         </div>
                         <p class="text_color normal_text">
                             Jako poslední z frontendu si vytvořte ve složce pages soubor "add.vue". Tento soubor
@@ -263,18 +263,19 @@
                         <p class="text_color normal_text">
                             Nyní s připraveným frontendem je potřeba vytvořit potřebnou logiku na našem backendu.
                             Jelikož již máme vytvořené všechny potřebné routy, tak je potřeba už nastavit jen 
-                            samotnou funkci v souboru views.py.
+                            samotnou funkci v souboru views.py. V obrázku níže je kromě funkce i import všech funkcí
+                            a Class, které budou využity u stránek pro registraci a přihlašování.
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color"> .../vaseaplikace/views.vue </p>
-                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                            <img src="~/assets/img/recipe_view.png" class="tutorial_img">      
                         </div>
                         <p class="text_color normal_text">
                             U receptů si vytvoříme ještě serializér v souboru serializers.py
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color"> .../vaseaplikace/serializers.vue </p>
-                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                            <img src="~/assets/img/recipe_serializer.png" class="tutorial_img">      
                         </div>
                     <h3 class="text_color title_text" id="pages-register-id"> Vytvoření stránky pro registraci </h3>
                         <p class="text_color normal_text">
@@ -283,20 +284,42 @@
                         </p>    
                         <div class="tutorial_img_box">
                             <p class="text_color"> .../client/pages/register.vue </p>
-                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                            <img src="~/assets/img/register_page.png" class="tutorial_img">     
                         </div>
                         <p class="text_color normal_text">
                             Jako další si k této stánce vytvořte v backendu funkci pro vyhodnocení registrace, 
-                            ve složce views.py.
+                            ve složce views.py. Jelikož již máte všechny potřebné funkce a Classy importované, tak
+                            stačí přidat jen samotnou funkci. 
                         </p>
                         <div class="tutorial_img_box">
                             <p class="text_color"> .../vaseaplikace/views.py </p>
-                            <img src="" class="tutorial_img">     <!-- přidat obrázek --> 
+                            <img src="~/assets/img/register_view_code.png" class="tutorial_img">      
                         </div>
                     <h3 class="text_color title_text" id="pages-login-id"> Vytvoření stránky pro přihášení </h3>
                         <p class="text_color normal_text">
                             Nyní si ve frontendu ve složce pages vytvořte soubor stránky pro přihlášení. Nazveme ho 
+                            "login.vue".
                         </p>
+                        <div class="tutorial_img_box">
+                            <p class="text_color"> .../client/pages/login.vue </p>
+                            <img src="~/assets/img/login_page.png" class="tutorial_img">    
+                        </div>
+                        <p class="text_color normal_text">
+                            Nyní si stejně jako u stránky pro registraci vytvoříte v backendu funkci, pro 
+                            spracování frontend requestu. Zde stejně jako u registrace stačí přidat už jen samotnou funkci.
+                        </p>
+                        <div class="tutorial_img_box">
+                            <p class="text_color"> .../vaseaplikace/views.py </p>
+                            <img src="~/assets/img/login_view_code.png" class="tutorial_img">
+                        </div>
+                        <p class="text_color normal_text">
+                            S tímto je webová aplikace hotova. Můžete si ověřit její fungování tím, že ve složce django
+                            projektu spustíte v konzoli backend server příkazem "python manage.py runserver" a ve složce
+                            vašeho nuxt projektu frontend příkazem "npm run dev". Tato stránka nyní běží v DEBUG režimu, 
+                            pokud stránku plánujete použít v produkci, tak by jste měly vypnout DEBUG režim v souboru
+                            settings.py a změnit povolené URL adresy na URL adresu vaší stránky.
+                        </p>
+
                     
             </div>
             <div class="other">
@@ -457,6 +480,7 @@ body {
 .links{
     flex: 15%;
     padding-left: 15px;
+    max-width: 15%;
 }
 .other{
     flex: 10%;   

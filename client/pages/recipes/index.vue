@@ -7,14 +7,12 @@
             <nuxt-link v-if="isLoggedIn" to="/recipes/add" class="btn btn-info">přidat recept</nuxt-link>
           </div>
         </div>
-        <template > <!-- v-for="recipe in recipes" -->
+        <template > 
           <div v-for="recipe in recipes" :key="recipe.id" class="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <!-- <div class="col-lg-3 col-md-4 col-sm-6 mb-4">  -->
               <recipe-card :key="recipe.id" :recipe="recipe"></recipe-card>
-            <!-- </div> -->
           </div>
         </template>
-      </div> <!-- :onDelete="deleteRecipe" -->
+      </div> 
     </main>
   </template>
 
@@ -48,3 +46,4 @@
   color: none;
   }
   </style>
+

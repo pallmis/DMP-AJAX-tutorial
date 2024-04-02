@@ -42,7 +42,8 @@ export default {
     methods: {
         async submitForm() {
             try {
-                const response = await axios.post('http://localhost:8000/dlouhodobka/user/register/', {   // Django request
+                // Django request
+                const response = await axios.post('http://localhost:8000/dlouhodobka/user/register/', {
                     username: this.username,
                     password: this.password,
                     password2: this.password2,
@@ -63,9 +64,7 @@ export default {
 </script>
 
 <style>
-
 .register_message {
     margin-top: 10px;
 }
-
 </style>

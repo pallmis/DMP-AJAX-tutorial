@@ -11,8 +11,6 @@ export const mutations = {
 export const actions = {
     logout({ commit }) {
         localStorage.removeItem('userToken');
-        // Optionally, clear other user-related data from the store
-        //commit('clearUserData'); // Define this mutation if needed
     },
 
     async fetchRecipes({ commit }) {
@@ -33,3 +31,5 @@ export const getters = {
         return false;
     },
 };
+
+

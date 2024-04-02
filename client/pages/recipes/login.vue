@@ -41,7 +41,8 @@ export default {
     methods: {
         async submitForm() {
             try {
-                const response = await axios.post('http://localhost:8000/dlouhodobka/user/login/', {  // Django request 
+                // request na backend
+                const response = await axios.post('http://localhost:8000/dlouhodobka/user/login/', {   
                     username: this.username,
                     password: this.password,
                 });
@@ -52,7 +53,7 @@ export default {
                     this.isLoggedIn = true;
                     this.$router.push('/recipes/');     // přesune na stránku s recepty
                 }   else {
-                    this.loginMessage = response.data.message;  // Update message with error
+                    this.loginMessage = response.data.message;  // ukáže message s errorem
                     this.isLoggedIn = false;
                 }
           } catch (error) {
